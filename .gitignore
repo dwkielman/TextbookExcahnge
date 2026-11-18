@@ -1,0 +1,10 @@
+**/node_modules/
+**/dist/
+**/.env
+!**/.env.example
+server/src/generated/prisma/
+node_modules/
+dist/
+.env
+.env.*
+!.env.example

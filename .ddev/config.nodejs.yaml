@@ -1,0 +1,14 @@
+web_extra_exposed_ports:
+  - name: vite
+    container_port: 5173
+    http_port: 5172
+    https_port: 5173
+
+web_extra_daemons:
+  - name: vite
+    command: "bash -c 'if [ ! -d node_modules ]; then npm ci; fi; npm run dev -- --host 0.0.0.0'"
+    directory: /var/www/html/client
+
+  - name: express
+    command: "bash -c 'if [ ! -d node_modules ]; then npm ci; fi; npm run dev'"
+    directory: /var/www/html/server
